@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Student Registration Form</title>
+<style>
+* {
+    box-sizing: border-box;
+} 
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    padding: 50px 20px;
+    font-family: Arial, sans-serif;
+    background: linear-gradient(
+        to bottom,
+        #eeeaff 45%,
+        #7563d5 45%
+    );
+    position: relative;
+    overflow-x: hidden;
+}
+
+/* Floating decorative circles */
+
+body::before,
+body::after {
+    content: "";
+    position: fixed;
+    border-radius: 50%;
+    background: linear-gradient(
+        135deg,
+        #d8ceff,
+        #8e7be3
+    );
+    z-index: 0;
+    pointer-events: none;
+}
+
+body::before {
+    width: 150px;
+    height: 150px;
+    top: 20px;
+    left: -65px;
+}
+
+body::after {
+    width: 160px;
+    height: 160px;
+    bottom: 40px;
+    right: -65px;
+}
+
+/* Main registration card */
+
+.container {
+    background: white;
+    max-width: 850px;
+    width: 100%;
+    margin: auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(50, 30, 100, 0.15);
+    position: relative;
+    z-index: 1;
+}
+
+/* Heading */
+
+h1 {
+    text-align: center;
+    color: #49368f;
+    font-size: 28px;
+    margin-bottom: 12px;
+}
+
+.subtitle {
+    text-align: center;
+    color: #999;
+    margin-bottom: 30px;
+}
+
+/* Progress steps */
+
+.progress {
+    display: flex;
+    justify-content: center;
+    gap: 45px;
+    margin-bottom: 40px;
+}
+
+.step {
+    text-align: center;
+    color: #777;
+    font-size: 13px;
+}
+
+.circle {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: #7563d5;
+    color: white;
+    margin: auto auto 8px;
+    padding-top: 9px;
+    font-weight: bold;
+}
+
+/* Section heading */
+
+h3 {
+    color: #49368f;
+    margin-bottom: 20px;
+}
+
+/* Form layout */
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+
+.full {
+    grid-column: span 2;
+}
+
+/* Labels */
+
+label {
+    color: #444;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+/* Input fields */
+
+input[type="text"],
+input[type="tel"],
+select,
+textarea {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #e1ddef;
+    border-radius: 7px;
+    background: #f4f5fa;
+    font-size: 14px;
+    outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #7563d5;
+    background: white;
+}
+
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Gender and hobbies */
+
+.gender,
+.hobbies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: #7563d5;
+    cursor: pointer;
+}
+
+/* Buttons */
+
+.buttons {
+    text-align: right;
+    margin-top: 30px;
+}
+
+button {
+    padding: 12px 25px;
+    border: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.register {
+    background: #7563d5;
+    color: white;
+}
+
+.clear {
+    background: white;
+    color: #7563d5;
+    border: 1px solid #7563d5;
+    margin-right: 10px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+/* Illustration stickers */
+
+.sticker {
+    position: fixed;
+    width: 150px;
+    height: auto;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.sticker-top {
+    top: 100px;
+    right: 25px;
+}
+
+.sticker-bottom {
+    bottom: 20px;
+    left: 20px;
+}
+
+/* Mobile responsive design */
+
+@media (max-width: 700px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .full {
+        grid-column: span 1;
+    }
+
+    .container {
+        padding: 22px;
+    }
+
+    .sticker {
+        display: none;
+    }
+
+    .progress {
+        gap: 20px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<img src="https://ouch-prod-var-cdn.icons8.com/ev/illustrations/previews/zrkGBBlED45lLnyQ.webp" class="sticker sticker-top" height="500px" width="400px">
+<img src="https://ouch-prod-var-cdn.icons8.com/jm/illustrations/previews/fnphUgjzMs4GiXSv.webp" class="sticker sticker-bottom" height="500px" width="400px">
+<div class="container">
+
+
+<h1>Student Registration Form</h1>
+
+<p class="subtitle">Create your student account</p>
+
+<div class="progress">
+
+    <div class="step">
+        <div class="circle">1</div>
+        Basic Details
+    </div>
+
+    <div class="step">
+        <div class="circle">2</div>
+        Contact Details
+    </div>
+
+    <div class="step">
+        <div class="circle">3</div>
+        Interests
+    </div>
+
+</div>
+
+<h3>Basic Details</h3>
+
+<form>
+
+<div class="form-grid">
+
+    <div class="field">
+        <label>First Name</label>
+        <input type="text" name="fnm" placeholder="Enter first name">
+    </div>
+
+    <div class="field">
+        <label>Middle Name</label>
+        <input type="text" name="mnm" placeholder="Enter middle name">
+    </div>
+
+    <div class="field">
+        <label>Last Name</label>
+        <input type="text" name="lnm" placeholder="Enter last name">
+    </div>
+
+    <div class="field">
+        <label>Gender</label>
+        <div class="gender">
+            <label><input type="radio" name="gen"> Female</label>
+            <label><input type="radio" name="gen"> Male</label>
+            <label><input type="radio" name="gen"> Others</label>
+        </div>
+    </div>
+
+    <div class="field full">
+        <label>Address</label>
+        <textarea name="add" placeholder="Enter your address"></textarea>
+    </div>
+
+    <div class="field full">
+        <label>Phone Number</label>
+
+        <div style="display:flex; gap:10px;">
+
+            <select name="country_code" style="width:150px;">
+                <option value="+91">IN (+91)</option>
+                <option value="+1">USA (+1)</option>
+                <option value="+44">UK (+44)</option>
+                <option value="+81">Japan (+81)</option>
+                <option value="+971">UAE (+971)</option>
+                <option value="+49">Germany (+49)</option>
+                <option value="+33">France (+33)</option>
+                <option value="+61">Australia (+61)</option>
+            </select>
+
+            <input type="tel" name="phone" placeholder="Phone Number">
+
+        </div>
+    </div>
+
+    <div class="field full">
+        <label>Hobbies</label>
+
+        <div class="hobbies">
+
+            <label><input type="checkbox"> Coding</label>
+            <label><input type="checkbox"> Reading</label>
+            <label><input type="checkbox"> Watching Movies</label>
+            <label><input type="checkbox"> Playing Games</label>
+            <label><input type="checkbox"> Visiting New Places</label>
+
+        </div>
+    </div>
+
+</div>
+
+<div class="buttons">
+
+    <button type="reset" class="clear">Clear</button>
+
+    <button type="submit" class="register">Register</button>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>
